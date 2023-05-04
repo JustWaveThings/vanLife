@@ -11,7 +11,7 @@ function App() {
 		<BrowserRouter>
 			<nav className="top">
 				<Link
-					to="/scrimba_react_router_v6/"
+					to="/"
 					className="link"
 				>
 					<h1 className="title-header">#VANLIFE</h1>
@@ -31,7 +31,7 @@ function App() {
 			</nav>
 			<Routes>
 				<Route
-					path="/scrimba_react_router_v6/"
+					path="/"
 					element={<Home />}
 				/>
 				<Route
