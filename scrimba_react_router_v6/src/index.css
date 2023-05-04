@@ -29,7 +29,7 @@ body {
 	color: white;
 	opacity: 0.9;
 	width: 100svw;
-	height: 80%;
+	height: 85%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -62,11 +62,13 @@ h1.title-header {
 	font-size: 1.5rem;
 }
 
-div.home {
+div.home,
+div.about {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	gap: 1rem;
+	background-color: #fff7ed;
 }
 div.home > .cta {
 	display: flex;
@@ -100,6 +102,55 @@ div.home > button {
 	font-weight: bold;
 }
 
+div.about > main {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+div.about > main > header {
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 38px;
+	margin: 0 5%;
+	margin-top: 1rem;
+	color: #161616;
+}
+
+div.about > main > p {
+	font-size: 0.9rem;
+	color: black;
+	font-weight: 300;
+	line-height: 22px;
+	margin: 0 5%;
+	opacity: 0.8;
+}
+
+div.about > .cta-cont-about {
+	background-color: #ffcc8d;
+	color: #161616;
+	padding: 1rem;
+	margin: 0 5%;
+	border-radius: 0.25rem;
+}
+
+.cta-text-about {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+.cta-text-button {
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 30px;
+	background-color: #161616;
+	border-radius: 0.5rem;
+	color: #ffffff;
+	padding: 0.5rem 1rem;
+	outline: none;
+}
+
 footer {
 	margin-top: auto;
 	display: flex;
@@ -112,4 +163,5 @@ footer {
 
 .home {
 	background-image: url('../public/home_mountain_background.png');
+	background-repeat: no-repeat;
 }
