@@ -1,26 +1,32 @@
 import React from 'react';
 import './meyer.css';
 import './index.css';
-import Home from './Home';
-import About from './About';
+import Home from './components/Home';
+import About from './components/About';
+import Vans from './components/Vans';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 function App() {
 	return (
 		<BrowserRouter>
-			<nav>
+			<nav className="top">
 				<Link
 					to="/scrimba_react_router_v6/"
 					className="link"
 				>
-					{' '}
-					Home
+					<h1 className="title">#VANLIFE</h1>
 				</Link>
 				<Link
 					to="scrimba_react_router_v6/about"
 					className="link"
 				>
 					About
+				</Link>
+				<Link
+					to="scrimba_react_router_v6/vans"
+					className="link"
+				>
+					Vans
 				</Link>
 			</nav>
 			<Routes>
@@ -31,6 +37,10 @@ function App() {
 				<Route
 					path="scrimba_react_router_v6/about"
 					element={<About />}
+				/>
+				<Route
+					path="scrimba_react_router_v6/vans"
+					element={<Vans />}
 				/>
 			</Routes>
 		</BrowserRouter>

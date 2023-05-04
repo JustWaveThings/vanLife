@@ -32,13 +32,26 @@ body {
 }
 
 .link {
-	font-size: 2rem;
+	font-size: 1rem;
 	text-decoration: none;
-	margin: 1rem 1rem;
-	padding-top: 1rem;
-	color: white;
+	margin: 1rem;
+	color: #4d4d4d;
 }
 
-nav {
+nav.top {
 	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 1rem;
+	background-color: #fff7ed;
+	height: 120px;
+}
+
+nav.top > :nth-child(2) {
+	margin-left: auto;
+}
+
+h1.title {
+	font-weight: 700;
+	font-size: 1.5rem;
 }
