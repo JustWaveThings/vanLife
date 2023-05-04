@@ -7,7 +7,7 @@ function About() {
 		<div className="test about">
 			<div className="hero-img">
 				<img
-					src="/scrimba_react_router_v6/public/person_on_top_of_van.png"
+					src="/person_on_top_of_van.png"
 					alt="person on top of camper van at night"
 				/>
 			</div>

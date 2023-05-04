@@ -99,6 +99,7 @@ div.home > button {
 	border-radius: 0.5rem;
 	color: #ffffff;
 	background-color: #ff8c38;
+	border-color: #ff8c38;
 	font-weight: bold;
 }
 
@@ -145,6 +146,7 @@ div.about > .cta-cont-about {
 	font-weight: bold;
 	line-height: 30px;
 	background-color: #161616;
+	border-color: #161616;
 	border-radius: 0.5rem;
 	color: #ffffff;
 	padding: 0.5rem 1rem;
