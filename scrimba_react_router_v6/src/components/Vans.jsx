@@ -5,24 +5,36 @@ import '../index.css';
 import '../meyer.css';
 
 function Vans() {
-	const [vanData, setVanData] = useState({});
+	const [vanData, setVanData] = useState([]);
 
 	useEffect(() => {
 		fetch('/api/vans')
 			.then(res => res.json())
-			.then(data => console.log(data));
+			.then(data => setVanData(data.vans));
 	}, []);
+
+	const vanDataDisplay = vanData.map(van => (
+		<VanCard
+			image={van.imageUrl}
+			key={van.id}
+			vanName={van.name}
+			price={van.price}
+			type={van.type}
+		/>
+	));
+
+	console.log(vanData);
 	return (
 		<div className="test vans">
 			<div className="nav-cont-van">
 				<h1 className="nav-title-van">Explore our van options</h1>
 				<nav className="nav-van-options">
-					<button>Simple</button>
-					<button>luxury</button>
-					<button>Rugged</button>
+					<button className="simple">Simple</button>
+					<button className="luxury">Luxury</button>
+					<button className="rugged">Rugged</button>
 					<button>Clear Filters</button>
 				</nav>
-				<VanCard />
+				<main className="van-cont">{vanDataDisplay}</main>
 			</div>
 		</div>
 	);

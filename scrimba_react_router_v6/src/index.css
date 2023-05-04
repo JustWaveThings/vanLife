@@ -100,7 +100,7 @@ div.home > button {
 	border-radius: 0.5rem;
 	color: #ffffff;
 	background-color: #ff8c38;
-	border-color: #ff8c38;
+	border: none;
 	font-weight: bold;
 }
 
@@ -177,13 +177,13 @@ footer {
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 229px;
-
 	margin: 1rem;
 }
 
 .card-cont-van > img {
 	height: 229px;
 	width: 229px;
+	border-radius: 0.6rem;
 }
 
 .card-cont-van > .card-bottom {
@@ -197,27 +197,99 @@ footer {
 	font-size: 20px;
 	line-height: 31px;
 	justify-content: space-between;
-	margin: 0rem 1rem;
+}
+
+.card-cont-van > .card-bottom > .top-cont {
+	margin: 0.5rem 0rem;
 }
 
 .card-cont-van > .card-bottom > .bottom-cont {
-	padding-bottom: 1rem;
 }
 .card-cont-van > .card-bottom > .top-cont > .van-name {
-	font-size: 1rem;
+	font-size: 1.2rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
 	line-height: 31px;
 }
 
 .card-cont-van > .card-bottom > .bottom-cont > .card-button {
 	color: #ffead0;
-	border-radius: 0.5rem;
+	border-radius: 0.25rem;
+	border: none;
 	padding: 0.5rem 1rem;
-	font-weight: bold;
+	font-weight: 300;
 	font-size: 1.25rem;
 	text-shadow: 0px 4px 4px hwb(0 0% 100% / 0.275);
+	text-transform: capitalize;
 }
 
 .simple {
 	background-color: #e17654;
-	outline-color: #e17654;
+}
+
+button.simple:hover {
+	background-color: #e17654;
+	color: #ffffff;
+}
+
+.rugged {
+	background-color: #115e59;
+}
+
+button.rugged:hover {
+	background-color: #115e59;
+	color: #ffffff;
+}
+
+.luxury {
+	background-color: #161616;
+}
+
+button.luxury:hover {
+	background-color: #161616;
+	color: #ffffff;
+}
+
+/* van page container */
+
+.vans {
+	background-color: #f5f5f5;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: fit-content;
+}
+
+.van-cont {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.nav-van-options {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.5rem 4rem;
+}
+.nav-van-options > button {
+	border: none;
+	background-color: #ffead0;
+	padding: 0.5rem 1.5rem;
+	border-radius: 0.25rem;
+	font-size: 16px;
+}
+
+.nav-van-options > button:last-child {
+	background-color: #f5f5f5;
+	text-decoration: underline;
+}
+
+.nav-title-van {
+	margin-top: 2rem;
+	margin-left: 4rem;
+	font-size: 32px;
+	font-weight: 600;
 }
