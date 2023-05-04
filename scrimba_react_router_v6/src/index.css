@@ -165,6 +165,6 @@ footer {
 }
 
 .home {
-	background-image: url('../public/home_mountain_background.png');
+	background-image: url('/home_mountain_background.png');
 	background-repeat: no-repeat;
 }
