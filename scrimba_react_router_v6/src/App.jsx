@@ -14,7 +14,7 @@ function App() {
 					to="/scrimba_react_router_v6/"
 					className="link"
 				>
-					<h1 className="title">#VANLIFE</h1>
+					<h1 className="title-header">#VANLIFE</h1>
 				</Link>
 				<Link
 					to="scrimba_react_router_v6/about"
@@ -43,6 +43,7 @@ function App() {
 					element={<Vans />}
 				/>
 			</Routes>
+			<footer> Ⓒ 2022 #VANLIFE </footer>
 		</BrowserRouter>
 	);
 }

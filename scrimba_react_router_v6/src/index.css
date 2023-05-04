@@ -11,6 +11,12 @@ h6,
 p {
 	margin: 0;
 }
+#root {
+	display: flex;
+	flex-direction: column;
+	width: 100svw;
+	height: 100svh;
+}
 
 body {
 	margin: 0;
@@ -23,7 +29,7 @@ body {
 	color: white;
 	opacity: 0.9;
 	width: 100svw;
-	height: 100svh;
+	height: 80%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,7 +57,59 @@ nav.top > :nth-child(2) {
 	margin-left: auto;
 }
 
-h1.title {
+h1.title-header {
 	font-weight: 700;
 	font-size: 1.5rem;
+}
+
+div.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+div.home > .cta {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+}
+div.home > .cta > h1.title {
+	font-size: 36px;
+	line-height: 42px;
+	font-weight: bold;
+
+	margin: 0 5%;
+	margin-top: 3rem;
+}
+
+div.home > .cta > p {
+	font-size: 1rem;
+	margin: 0 5%;
+	line-height: 24px;
+}
+
+div.home > button {
+	font-size: 0.9rem;
+	margin: auto 5%;
+	padding: 0.75rem 9rem;
+	border-radius: 0.5rem;
+	color: #ffffff;
+	background-color: #ff8c38;
+	font-weight: bold;
+}
+
+footer {
+	margin-top: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem 0rem;
+	background-color: #252525;
+	color: #aaaaaa;
+}
+
+.home {
+	background-image: url('../public/home_mountain_background.png');
 }
