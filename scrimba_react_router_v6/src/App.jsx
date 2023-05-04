@@ -4,6 +4,7 @@ import './index.css';
 import Home from './components/Home';
 import About from './components/About';
 import Vans from './components/Vans';
+import VanDetail from './components/VanDetail';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 function App() {
@@ -35,12 +36,16 @@ function App() {
 					element={<Home />}
 				/>
 				<Route
-					path="scrimba_react_router_v6/about"
+					path="/about"
 					element={<About />}
 				/>
 				<Route
-					path="scrimba_react_router_v6/vans"
+					path="/vans"
 					element={<Vans />}
+				/>
+				<Route
+					path="/vans/:id"
+					element={<VanDetail />}
 				/>
 			</Routes>
 			<footer> Ⓒ 2022 #VANLIFE </footer>
