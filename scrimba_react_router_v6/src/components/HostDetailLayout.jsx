@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, NavLink, Link, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function HostDetailLayout() {
 	const params = useParams();
@@ -48,7 +48,7 @@ function HostDetailLayout() {
 						</div>
 					</div>
 				))}
-
+			{/*
 			<nav className="host-details-nav">
 				<NavLink
 					to="."
@@ -71,7 +71,7 @@ function HostDetailLayout() {
 					Photos
 				</NavLink>
 			</nav>
-			<Outlet />
+			<Outlet /> */}
 		</div>
 	);
 }

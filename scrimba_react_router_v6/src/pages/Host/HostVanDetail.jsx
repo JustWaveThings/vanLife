@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Link, useParams } from 'react-router-dom';
+import { NavLink, Link, useParams, Outlet } from 'react-router-dom';
 
 function HostVanDetail() {
 	const params = useParams();
@@ -17,34 +17,72 @@ function HostVanDetail() {
 	} else {
 		return (
 			<>
-				{vanDetail &&
-					vanDetail.map(van => (
-						<div
-							className="host-van-detail-cont"
-							key={van.id}
-						>
-							<div className="host-van-detail-card">
-								<div className="bottom-card">
-									<div className="info">
-										<div className="label">Name:</div>
-										<div className="text">{van.name}</div>
-									</div>
-									<div className="info">
-										<div className="label">Category:</div>
-										<div className="text">{van.type}</div>
-									</div>
-									<div className="info">
-										<div className="label">Description:</div>
-										<div className="text">{van.description}</div>
-									</div>
-									<div className="info">
-										<div className="label">Visibilty:</div>
-										<div className="text">Public</div>
+				<div className="host-detail-layout-cont">
+					<Link
+						to=".."
+						relative="path"
+						className="back"
+					>
+						<img
+							src="/Arrow.png"
+							alt="left arrow"
+						></img>
+						<div className="back">Back to all vans</div>
+					</Link>
+					{vanDetail &&
+						vanDetail.map(van => (
+							<>
+								<div
+									className="host-van-detail-cont-top"
+									key={van.id}
+								>
+									<div className="host-van-detail-card">
+										<div className="top-card">
+											<img
+												src={van.imageUrl}
+												alt="picture of camper van"
+												height="160"
+											></img>
+											<div className="right">
+												<button>{van.type}</button>
+												<div>{van.name}</div>
+												<div className="price-cont">
+													<div>${van.price}</div>
+													<p>/day</p>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					))}
+
+								<div>
+									<nav className="host-details-nav">
+										<NavLink
+											to="."
+											end
+											className={({ isActive }) => (isActive ? 'my-link' : 'link')}
+										>
+											Details
+										</NavLink>
+
+										<NavLink
+											to="pricing"
+											className={({ isActive }) => (isActive ? 'my-link' : 'link')}
+										>
+											Pricing
+										</NavLink>
+										<NavLink
+											to="photos"
+											className={({ isActive }) => (isActive ? 'my-link' : 'link')}
+										>
+											Photos
+										</NavLink>
+									</nav>
+									<Outlet context={[vanDetail, setVanDetail]} />
+								</div>
+							</>
+						))}
+				</div>
 			</>
 		);
 	}
