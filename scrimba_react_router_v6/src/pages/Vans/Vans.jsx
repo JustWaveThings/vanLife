@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import '../../../server.js';
 import VanCard from './VanCard.jsx';
 
 function Vans() {
 	const [vanData, setVanData] = useState([]);
+	let [searchParams, setSearchParams] = useSearchParams();
+
+	const typeFilter = searchParams.get('type');
+	console.log(typeFilter);
 
 	useEffect(() => {
 		fetch('/api/vans')

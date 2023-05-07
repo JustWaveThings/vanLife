@@ -29,59 +29,58 @@ function HostVanDetail() {
 						></img>
 						<div className="back">Back to all vans</div>
 					</Link>
-					{vanDetail &&
-						vanDetail.map(van => (
-							<>
-								<div
-									className="host-van-detail-cont-top"
-									key={van.id}
-								>
-									<div className="host-van-detail-card">
-										<div className="top-card">
-											<img
-												src={van.imageUrl}
-												alt="picture of camper van"
-												height="160"
-											></img>
-											<div className="right">
-												<button>{van.type}</button>
-												<div>{van.name}</div>
-												<div className="price-cont">
-													<div>${van.price}</div>
-													<p>/day</p>
-												</div>
+					{vanDetail.map(van => (
+						<>
+							<div
+								key={van.id}
+								className="host-van-detail-cont-top"
+							>
+								<div className="host-van-detail-card">
+									<div className="top-card">
+										<img
+											src={van.imageUrl}
+											alt="picture of camper van"
+											height="160"
+										></img>
+										<div className="right">
+											<button>{van.type}</button>
+											<div>{van.name}</div>
+											<div className="price-cont">
+												<div>${van.price}</div>
+												<p>/day</p>
 											</div>
 										</div>
 									</div>
 								</div>
+							</div>
 
-								<div>
-									<nav className="host-details-nav">
-										<NavLink
-											to="."
-											end
-											className={({ isActive }) => (isActive ? 'my-link' : 'link')}
-										>
-											Details
-										</NavLink>
+							<div>
+								<nav className="host-details-nav">
+									<NavLink
+										to="."
+										end
+										className={({ isActive }) => (isActive ? 'my-link' : 'link')}
+									>
+										Details
+									</NavLink>
 
-										<NavLink
-											to="pricing"
-											className={({ isActive }) => (isActive ? 'my-link' : 'link')}
-										>
-											Pricing
-										</NavLink>
-										<NavLink
-											to="photos"
-											className={({ isActive }) => (isActive ? 'my-link' : 'link')}
-										>
-											Photos
-										</NavLink>
-									</nav>
-									<Outlet context={[vanDetail, setVanDetail]} />
-								</div>
-							</>
-						))}
+									<NavLink
+										to="pricing"
+										className={({ isActive }) => (isActive ? 'my-link' : 'link')}
+									>
+										Pricing
+									</NavLink>
+									<NavLink
+										to="photos"
+										className={({ isActive }) => (isActive ? 'my-link' : 'link')}
+									>
+										Photos
+									</NavLink>
+								</nav>
+								<Outlet context={[vanDetail, setVanDetail]} />
+							</div>
+						</>
+					))}
 				</div>
 			</>
 		);
