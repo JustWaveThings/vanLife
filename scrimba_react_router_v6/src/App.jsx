@@ -14,6 +14,8 @@ import Dashboard from './pages/Host/Dashboard';
 import HostVanDetail from './pages/Host/HostVanDetail';
 import ListedVans from './pages/Host/ListedVans';
 import HostDetailLayout from './components/HostDetailLayout';
+import HostDetailPricing from './components/HostDetailPricing';
+import HostDetailPhotos from './components/HostDetailPhotos';
 
 function App() {
 	return (
@@ -66,6 +68,14 @@ function App() {
 							<Route
 								index
 								element={<HostVanDetail />}
+							/>
+							<Route
+								path="pricing"
+								element={<HostDetailPricing />}
+							/>
+							<Route
+								path="photos"
+								element={<HostDetailPhotos />}
 							/>
 						</Route>
 					</Route>

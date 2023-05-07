@@ -51,7 +51,8 @@ function HostDetailLayout() {
 
 			<nav className="host-details-nav">
 				<NavLink
-					to="details"
+					to="."
+					end
 					className={({ isActive }) => (isActive ? 'my-link' : 'link')}
 				>
 					Details
