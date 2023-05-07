@@ -473,19 +473,22 @@ button.luxury:hover {
 	gap: 1.5rem;
 	background-color: #fff7ed;
 }
+.host-van-detail-cont-top {
+	margin-top: 1.5rem;
+}
 
-.host-van-detail-cont > .back {
+.back {
 	font-size: 1rem;
 	text-decoration: underline;
 	color: black;
 	margin-left: 2rem;
 	display: flex;
-	gap: 1rem;
+	background-color: pink;
 }
 
 .host-van-detail-card {
 	background-color: #ffffff;
-	margin: 1.5rem;
+	margin: 0 1.5rem;
 	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -564,4 +567,18 @@ button.luxury:hover {
 .bottom-card > .info > .text {
 	font-size: 0.9rem;
 	line-height: 21.5px;
+}
+
+.host-details-nav {
+	background-color: #ffffff;
+	margin: 0 1.5rem;
+}
+
+.host-detail-layout-cont {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
+	margin: 0;
+	background-color: #fff7ed;
 }

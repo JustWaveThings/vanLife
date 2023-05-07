@@ -11,7 +11,7 @@ function HostDetailLayout() {
 			.then(data => setVanDetail(data.vans));
 	}, [params.id]);
 	return (
-		<>
+		<div className="host-detail-layout-cont">
 			<Link
 				to=".."
 				relative="path"
@@ -21,12 +21,12 @@ function HostDetailLayout() {
 					src="/Arrow.png"
 					alt="left arrow"
 				></img>
-				<div>Back to all vans</div>
+				<div className="back">Back to all vans</div>
 			</Link>
 			{vanDetail &&
 				vanDetail.map(van => (
 					<div
-						className="host-van-detail-cont"
+						className="host-van-detail-cont-top"
 						key={van.id}
 					>
 						<div className="host-van-detail-card">
@@ -49,7 +49,7 @@ function HostDetailLayout() {
 					</div>
 				))}
 
-			<nav className="top-host">
+			<nav className="host-details-nav">
 				<NavLink
 					to="details"
 					className={({ isActive }) => (isActive ? 'my-link' : 'link')}
@@ -71,7 +71,7 @@ function HostDetailLayout() {
 				</NavLink>
 			</nav>
 			<Outlet />
-		</>
+		</div>
 	);
 }
 
