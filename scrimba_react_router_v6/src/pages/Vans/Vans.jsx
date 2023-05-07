@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../../server.js';
+import '../../../server.js';
 import VanCard from './VanCard.jsx';
-import '../index.css';
-import '../meyer.css';
 
 function Vans() {
 	const [vanData, setVanData] = useState([]);
@@ -20,10 +18,11 @@ function Vans() {
 			vanName={van.name}
 			price={van.price}
 			type={van.type}
+			id={van.id}
+			description={van.description}
 		/>
 	));
 
-	console.log(vanData);
 	return (
 		<div className="test vans">
 			<div className="nav-cont-van">

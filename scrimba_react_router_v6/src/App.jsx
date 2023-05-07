@@ -1,54 +1,76 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './meyer.css';
 import './index.css';
-import Home from './components/Home';
-import About from './components/About';
-import Vans from './components/Vans';
-import VanDetail from './components/VanDetail';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Vans from './pages/Vans/Vans';
+import VanDetail from './pages/Vans/VanDetail';
+import Layout from './components/Layout';
+import Reviews from './pages/Host/Reviews';
+import Income from './pages/Host/Income';
+import HostLayout from './components/HostLayout';
+import Dashboard from './pages/Host/Dashboard';
+import HostVanDetail from './pages/Host/HostVanDetail';
+import ListedVans from './pages/Host/ListedVans';
+import HostDetailLayout from './components/HostDetailLayout';
 
 function App() {
 	return (
 		<BrowserRouter>
-			<nav className="top">
-				<Link
-					to="/"
-					className="link"
-				>
-					<h1 className="title-header">#VANLIFE</h1>
-				</Link>
-				<Link
-					to="scrimba_react_router_v6/about"
-					className="link"
-				>
-					About
-				</Link>
-				<Link
-					to="scrimba_react_router_v6/vans"
-					className="link"
-				>
-					Vans
-				</Link>
-			</nav>
 			<Routes>
 				<Route
 					path="/"
-					element={<Home />}
-				/>
-				<Route
-					path="/about"
-					element={<About />}
-				/>
-				<Route
-					path="/vans"
-					element={<Vans />}
-				/>
-				<Route
-					path="/vans/:id"
-					element={<VanDetail />}
-				/>
+					element={<Layout />}
+				>
+					<Route
+						index
+						element={<Home />}
+					/>
+					<Route
+						path="about"
+						element={<About />}
+					/>
+					<Route
+						path="vans"
+						element={<Vans />}
+					/>
+					<Route
+						path="vans/:id"
+						element={<VanDetail />}
+					/>
+					<Route
+						path="host"
+						element={<HostLayout />}
+					>
+						<Route
+							index
+							element={<Dashboard />}
+						/>
+						<Route
+							path="income"
+							element={<Income />}
+						/>
+						<Route
+							path="reviews"
+							element={<Reviews />}
+						/>
+						<Route
+							path="vans"
+							element={<ListedVans />}
+						/>
+						<Route
+							path="vans/:id"
+							element={<HostDetailLayout />}
+						>
+							<Route
+								index
+								element={<HostVanDetail />}
+							/>
+						</Route>
+					</Route>
+				</Route>
 			</Routes>
-			<footer> Ⓒ 2022 #VANLIFE </footer>
 		</BrowserRouter>
 	);
 }

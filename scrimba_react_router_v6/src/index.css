@@ -21,13 +21,11 @@ p {
 body {
 	margin: 0;
 	font-family: 'Inter', sans-serif;
-	background-color: black;
 }
 
 .test {
 	background-color: #fff7ed;
-	color: black;
-	opacity: 0.9;
+
 	width: 100svw;
 	height: 85%;
 	display: flex;
@@ -37,20 +35,15 @@ body {
 	font-size: 3rem;
 }
 
-.link {
-	font-size: 1rem;
-	text-decoration: none;
-	margin: 1rem;
-	color: #4d4d4d;
-}
-
-nav.top {
+nav.top,
+nav.top-host {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	padding-left: 1rem;
 	background-color: #fff7ed;
 	height: 120px;
+	color: #161616;
 }
 
 nav.top > :nth-child(2) {
@@ -102,6 +95,7 @@ div.home > button {
 	background-color: #ff8c38;
 	border: none;
 	font-weight: bold;
+	font-family: 'Inter', sans-serif;
 }
 
 div.about > main {
@@ -153,6 +147,7 @@ div.about > .cta-cont-about {
 	padding: 0.5rem 1rem;
 	outline: none;
 	cursor: pointer;
+	font-family: 'Inter', sans-serif;
 }
 
 footer {
@@ -197,19 +192,35 @@ footer {
 	font-size: 20px;
 	line-height: 31px;
 	justify-content: space-between;
+	color: #161616;
 }
 
 .card-cont-van > .card-bottom > .top-cont {
 	margin: 0.5rem 0rem;
 }
 
-.card-cont-van > .card-bottom > .bottom-cont {
-}
 .card-cont-van > .card-bottom > .top-cont > .van-name {
 	font-size: 1.2rem;
 	font-weight: 300;
 	letter-spacing: 0.05rem;
 	line-height: 31px;
+	color: #161616;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
 }
 
 .card-cont-van > .card-bottom > .bottom-cont > .card-button {
@@ -221,9 +232,12 @@ footer {
 	font-size: 1.25rem;
 	text-shadow: 0px 4px 4px hwb(0 0% 100% / 0.275);
 	text-transform: capitalize;
+	text-decoration: none;
+	font-family: 'Inter', sans-serif;
 }
 
 .simple {
+	font-family: 'Inter', sans-serif;
 	background-color: #e17654;
 }
 
@@ -233,6 +247,7 @@ button.simple:hover {
 }
 
 .rugged {
+	font-family: 'Inter', sans-serif;
 	background-color: #115e59;
 }
 
@@ -242,6 +257,7 @@ button.rugged:hover {
 }
 
 .luxury {
+	font-family: 'Inter', sans-serif;
 	background-color: #161616;
 }
 
@@ -273,6 +289,7 @@ button.luxury:hover {
 	justify-content: space-between;
 	align-items: center;
 	margin: 1.5rem 4rem;
+	gap: 0.5rem;
 }
 .nav-van-options > button {
 	border: none;
@@ -280,11 +297,13 @@ button.luxury:hover {
 	padding: 0.5rem 1.5rem;
 	border-radius: 0.25rem;
 	font-size: 16px;
+	font-family: 'Inter', sans-serif;
 }
 
 .nav-van-options > button:last-child {
 	background-color: #f5f5f5;
 	text-decoration: underline;
+	font-family: 'Inter', sans-serif;
 }
 
 .nav-title-van {
@@ -292,4 +311,257 @@ button.luxury:hover {
 	margin-left: 4rem;
 	font-size: 32px;
 	font-weight: 600;
+}
+
+/* vanDetail css  */
+
+.van-detail {
+	display: flex;
+	flex-direction: column;
+	height: max-content;
+	background-color: #fff7ed;
+}
+
+.van-detail-container {
+	padding: 27px;
+}
+
+.van-detail-container .back-button {
+	color: black;
+	font-family: 'Inter', sans-serif;
+	text-decoration: none;
+}
+
+.van-detail-container .back-button:visited {
+	font-family: 'Inter', sans-serif;
+}
+
+.van-detail-container .back-button span {
+	text-decoration: underline;
+	font-family: 'Inter', sans-serif;
+}
+
+.van-detail-inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	color: #161616;
+	height: fit-content;
+	gap: 2rem;
+}
+
+.van-detail img {
+	border-radius: 5px;
+	margin-block: 47px;
+	height: 500px;
+	width: 500px;
+	align-self: center;
+}
+
+.van-detail > h2 {
+	font-size: 2rem;
+	margin-bottom: 10px;
+}
+
+.van-detail .van-price {
+	font-size: 1.25rem;
+	margin-bottom: 10px;
+	color: #161616;
+}
+
+.van-detail .van-price span {
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+.van-detail .link-button {
+	background-color: #ff8c38;
+	color: white;
+	font-size: 1.125rem;
+	width: 90svw;
+	padding: 1rem;
+	border: none;
+	border-radius: 0.25rem;
+	font-size: 1.25rem;
+	font-weight: bold;
+	letter-spacing: 0.05rem;
+	text-decoration: none;
+}
+
+.van-detail p {
+	line-height: 22px;
+	font-size: 16px;
+}
+
+.van-detail i {
+	color: #ffead0;
+	border-radius: 0.25rem;
+	border: none;
+	padding: 0.5rem 1rem;
+	font-weight: 300;
+	font-size: 1.25rem;
+	text-shadow: 0px 4px 4px hwb(0 0% 100% / 0.275);
+	text-transform: capitalize;
+	text-align: center;
+	width: 120px;
+}
+
+.my-link {
+	color: #161616;
+	font-size: 1rem;
+	text-decoration: none;
+	margin: 1rem;
+	font-weight: bold;
+}
+
+.link,
+.logo {
+	font-size: 1rem;
+	text-decoration: none;
+	margin: 1rem;
+	color: #4d4d4d;
+}
+
+.link:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.host-listed-vans-title {
+	font-size: 1.5rem;
+	margin: 1rem;
+	font-weight: bold;
+}
+
+.host-listed-vans-cont {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	padding: 2rem 1rem;
+	background-color: #fff7ed;
+	border-radius: 0.25rem;
+}
+
+.host-listed-vans-img {
+	border-radius: 0.25rem;
+}
+
+.host-van-card {
+	display: flex;
+	padding: 1rem;
+	margin: 0.25rem 1rem;
+	background-color: #ffffff;
+}
+.host-van-right-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+	padding-left: 0.7rem;
+	color: black;
+}
+.host-van-price {
+	color: #4d4d4d;
+	font-size: 0.9rem;
+}
+
+.host-van-detail-cont {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	gap: 1.5rem;
+	background-color: #fff7ed;
+}
+
+.host-van-detail-cont > .back {
+	font-size: 1rem;
+	text-decoration: underline;
+	color: black;
+	margin-left: 2rem;
+	display: flex;
+	gap: 1rem;
+}
+
+.host-van-detail-card {
+	background-color: #ffffff;
+	margin: 1.5rem;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.host-van-detail-card > .top-card {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.host-van-detail-card > .top-card > .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.right > button {
+	background-color: #e17654;
+	border: none;
+	padding: 0.5rem 1rem;
+	width: 80px;
+	border-radius: 0.25rem;
+	color: #ffffff;
+	text-transform: capitalize;
+	font-family: 'Inter', sans-serif;
+}
+
+.right > :nth-child(2) {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.right > *:nth-child(3) > div {
+	font-weight: bold;
+}
+.right > .price-cont {
+	display: flex;
+}
+
+.host-van-detail-nav-button {
+	background-color: #ffffff;
+	border: none;
+	font-size: 0.9rem;
+	font-family: 'Inter', sans-serif;
+	line-height: 30px;
+}
+
+.host-van-detail-nav-button:hover {
+	text-decoration: underline;
+}
+
+.bottom-card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.bottom-card > .info {
+	display: flex;
+	flex-direction: row;
+	gap: 0.25rem;
+	align-items: baseline;
+}
+
+.bottom-card > .info > .label {
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+
+.bottom-card > .info:nth-child(2) > .text {
+	text-transform: capitalize;
+}
+
+.bottom-card > .info > .text {
+	font-size: 0.9rem;
+	line-height: 21.5px;
 }
