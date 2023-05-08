@@ -13,7 +13,7 @@ import HostLayout from './components/HostLayout';
 import Dashboard from './pages/Host/Dashboard';
 import HostVanDetail from './pages/Host/HostVanDetail';
 import ListedVans from './pages/Host/ListedVans';
-import HostDetailLayout from './components/HostDetailLayout';
+
 import HostDetailPricing from './components/HostDetailPricing';
 import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
