@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import '../../../server.js';
 import VanCard from './VanCard.jsx';
 
@@ -35,18 +35,30 @@ function Vans() {
 			<div className="nav-cont-van">
 				<h1 className="nav-title-van">Explore our van options</h1>
 				<nav className="nav-van-options">
-					<Link to="?type=simple">
+					<Button
+						onClick={() => {
+							setSearchParams({ type: 'simple' });
+						}}
+					>
 						<button className="simple">Simple</button>
-					</Link>
-					<Link to="?type=luxury">
+					</Button>
+					<Button
+						onClick={() => {
+							setSearchParams({ type: 'luxury' });
+						}}
+					>
 						<button className="luxury">Luxury</button>
-					</Link>
-					<Link to="?type=rugged">
+					</Button>
+					<Button
+						onClick={() => {
+							setSearchParams({ type: 'rugged' });
+						}}
+					>
 						<button className="rugged">Rugged</button>
-					</Link>
-					<Link to="?">
+					</Button>
+					<Button onClick={() => setSearchParams({})}>
 						<button className="clear-filter">Clear Filters</button>
-					</Link>
+					</Button>
 				</nav>
 				<main className="van-cont">{vanDataDisplay}</main>
 			</div>
