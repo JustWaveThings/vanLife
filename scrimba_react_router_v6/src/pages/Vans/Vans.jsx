@@ -35,30 +35,35 @@ function Vans() {
 			<div className="nav-cont-van">
 				<h1 className="nav-title-van">Explore our van options</h1>
 				<nav className="nav-van-options">
-					<Button
-						onClick={() => {
-							setSearchParams({ type: 'simple' });
-						}}
+					<button
+						onClick={() => setSearchParams({ type: null })}
+						className="simple link"
 					>
-						<button className="simple">Simple</button>
-					</Button>
-					<Button
-						onClick={() => {
-							setSearchParams({ type: 'luxury' });
-						}}
+						Simple
+					</button>
+
+					<button
+						onClick={() => setSearchParams({ type: 'luxury' })}
+						className="luxury link"
 					>
-						<button className="luxury">Luxury</button>
-					</Button>
-					<Button
-						onClick={() => {
-							setSearchParams({ type: 'rugged' });
-						}}
+						Luxury
+					</button>
+
+					<button
+						onClick={() => setSearchParams({ type: 'rugged' })}
+						className="rugged link"
 					>
-						<button className="rugged">Rugged</button>
-					</Button>
-					<Button onClick={() => setSearchParams({})}>
-						<button className="clear-filter">Clear Filters</button>
-					</Button>
+						Rugged
+					</button>
+
+					{typeFilter && (
+						<button
+							onClick={() => setSearchParams({})}
+							className="clear-filter"
+						>
+							Clear Filters
+						</button>
+					)}
 				</nav>
 				<main className="van-cont">{vanDataDisplay}</main>
 			</div>
