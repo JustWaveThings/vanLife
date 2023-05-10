@@ -16,6 +16,7 @@ p {
 	flex-direction: column;
 	width: 100svw;
 	height: 100svh;
+	background-color: #fff7ed;
 }
 
 body {
@@ -126,8 +127,12 @@ div.about > .cta-cont-about {
 	background-color: #ffcc8d;
 	color: #161616;
 	padding: 1rem;
-	margin: 0 5%;
+	margin: 3% 5%;
 	border-radius: 0.25rem;
+}
+
+div.about > .hero-img {
+	align-self: center;
 }
 
 .cta-text-about {
@@ -136,7 +141,8 @@ div.about > .cta-cont-about {
 	line-height: 30px;
 }
 
-.cta-text-button {
+.cta-text-button,
+.return-button {
 	font-size: 15px;
 	font-weight: bold;
 	line-height: 30px;
@@ -148,6 +154,12 @@ div.about > .cta-cont-about {
 	outline: none;
 	cursor: pointer;
 	font-family: 'Inter', sans-serif;
+}
+
+.return-button {
+	margin: 1.5rem;
+	padding: 1rem 20%;
+	font-size: 1.25rem;
 }
 
 footer {
@@ -587,4 +599,16 @@ a.back {
 	flex-grow: 1;
 	margin: 0;
 	background-color: #fff7ed;
+}
+
+.not-found {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	flex-direction: column;
+}
+
+.not-found > h2 {
+	padding: 2rem;
 }

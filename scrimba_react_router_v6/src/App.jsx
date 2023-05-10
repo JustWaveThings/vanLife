@@ -17,6 +17,7 @@ import ListedVans from './pages/Host/ListedVans';
 import HostDetailPricing from './components/HostDetailPricing';
 import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
+import NotFound from './pages/NotFound';
 
 function App() {
 	return (
@@ -80,6 +81,10 @@ function App() {
 							/>
 						</Route>
 					</Route>
+					<Route
+						path="*"
+						element={<NotFound />}
+					/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

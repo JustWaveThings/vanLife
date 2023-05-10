@@ -4,7 +4,7 @@ import '../meyer.css';
 
 function About() {
 	return (
-		<div className="test about">
+		<div className="about">
 			<div className="hero-img">
 				<img
 					src="/person_on_top_of_van.png"

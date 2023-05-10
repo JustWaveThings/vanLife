@@ -2,20 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import '../../../server.js';
 import VanCard from './VanCard.jsx';
+import getVans from '../../api.js';
 
 function Vans() {
 	const [vanData, setVanData] = useState([]);
 	let [searchParams, setSearchParams] = useSearchParams();
-
+	const [loading, setLoading] = useState(false);
 	const typeFilter = searchParams.get('type');
 	console.log(typeFilter);
 
 	const displayVans = typeFilter ? vanData.filter(van => van.type === typeFilter) : vanData;
 
 	useEffect(() => {
-		fetch('/api/vans')
-			.then(res => res.json())
-			.then(data => setVanData(data.vans));
+		async function showVans() {
+			setLoading(true);
+			const data = await getVans();
+			setVanData(data);
+			setLoading(false);
+		}
+		showVans();
 	}, []);
 
 	const vanDataDisplay = displayVans.map(van => (
@@ -30,7 +35,9 @@ function Vans() {
 			searchParams={searchParams.toString()}
 		/>
 	));
-
+	if (loading) {
+		return <h1>Loading...</h1>;
+	}
 	return (
 		<div className="test vans">
 			<div className="nav-cont-van">
