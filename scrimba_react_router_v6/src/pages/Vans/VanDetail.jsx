@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useLocation, useSearchParams } from 'react-router-dom';
-import '../../../server.js';
 
 function VanDetail() {
 	const params = useParams();

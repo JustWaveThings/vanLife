@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import './meyer.css';
 import './index.css';
+import './../server.js';
+
 import Home from './pages/Home';
 import About from './pages/About';
 import Vans from './pages/Vans/Vans';
@@ -13,11 +16,12 @@ import HostLayout from './components/HostLayout';
 import Dashboard from './pages/Host/Dashboard';
 import HostVanDetail from './pages/Host/HostVanDetail';
 import ListedVans from './pages/Host/ListedVans';
-
 import HostDetailPricing from './components/HostDetailPricing';
 import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
 import NotFound from './pages/NotFound';
+
+import './../server';
 
 function App() {
 	return (

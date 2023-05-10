@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import '../../../server.js';
 import VanCard from './VanCard.jsx';
-import getVans from '../../api.js';
+import { getVans } from '../../api.js';
 
 function Vans() {
 	const [vanData, setVanData] = useState([]);
 	let [searchParams, setSearchParams] = useSearchParams();
 	const [loading, setLoading] = useState(false);
 	const typeFilter = searchParams.get('type');
-	console.log(typeFilter);
 
 	const displayVans = typeFilter ? vanData.filter(van => van.type === typeFilter) : vanData;
 
 	useEffect(() => {
-		async function showVans() {
+		async function loadVans() {
 			setLoading(true);
 			const data = await getVans();
 			setVanData(data);
 			setLoading(false);
 		}
-		showVans();
+		loadVans();
 	}, []);
 
-	const vanDataDisplay = displayVans.map(van => (
+	const vanDataDisplay = displayVans?.map(van => (
 		<VanCard
 			image={van.imageUrl}
 			key={van.id}

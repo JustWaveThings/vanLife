@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../../../server.js';
 import { Link } from 'react-router-dom';
 
 function ListedVans() {
