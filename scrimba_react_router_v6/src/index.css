@@ -332,18 +332,19 @@ button.luxury.selected {
 	padding: 27px;
 }
 
-.van-detail-container .back-button {
+.van-detail-container > .back-button {
 	color: black;
 	font-family: 'Inter', sans-serif;
 	text-decoration: none;
 }
 
-.van-detail-container .back-button:visited {
-	font-family: 'Inter', sans-serif;
+a.back {
+	margin-top: 1.5rem;
+	margin-left: 1.5rem;
+	width: 100%;
 }
 
-.van-detail-container .back-button span {
-	text-decoration: underline;
+.van-detail-container > .back-button:visited {
 	font-family: 'Inter', sans-serif;
 }
 

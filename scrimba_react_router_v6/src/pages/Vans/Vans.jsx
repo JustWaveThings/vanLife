@@ -27,6 +27,7 @@ function Vans() {
 			type={van.type}
 			id={van.id}
 			description={van.description}
+			searchParams={searchParams.toString()}
 		/>
 	));
 

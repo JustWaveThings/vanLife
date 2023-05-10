@@ -1,10 +1,12 @@
 import React from 'react';
-
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function VanCard(props) {
 	return (
-		<Link to={`${props.id}`}>
+		<Link
+			to={props.id}
+			state={{ searchParams: props.searchParams }}
+		>
 			<div className="card-cont-van">
 				<img
 					src={`${props.image}`}

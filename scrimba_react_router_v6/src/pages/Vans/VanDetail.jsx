@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useLocation, useSearchParams } from 'react-router-dom';
 import '../../../server.js';
 
 function VanDetail() {
 	const params = useParams();
-
 	const [displayVan, setDisplayVan] = useState(null);
+	const location = useLocation();
+	console.log(location);
 	useEffect(() => {
 		fetch(`/api/vans/${params.id}`)
 			.then(res => res.json())
@@ -14,6 +15,13 @@ function VanDetail() {
 
 	return (
 		<div className="test van-detail">
+			<Link
+				to={`..?${location.state.searchParams ? location.state.searchParams : ''}`}
+				relative="path"
+				className="back"
+			>
+				<div className="back">Back to all vans</div>
+			</Link>
 			<div className="van-detail-container">
 				{displayVan ? (
 					<div className="van-detail-inner">
@@ -32,7 +40,6 @@ function VanDetail() {
 			</div>
 		</div>
 	);
-	console.log(displayVan);
 }
 
 export default VanDetail;
