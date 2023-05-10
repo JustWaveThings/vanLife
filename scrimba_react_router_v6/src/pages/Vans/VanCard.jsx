@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
 function VanCard(props) {
 	return (
-		<Link to={`/vans/${props.id}`}>
+		<Link to={`${props.id}`}>
 			<div className="card-cont-van">
 				<img
 					src={`${props.image}`}
