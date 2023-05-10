@@ -31,6 +31,8 @@ function Vans() {
 	if (error) {
 		return <h1 className="test"> There was an error: {error.message}</h1>;
 	}
+
+	throw new Error('');
 	return (
 		<div className="test vans">
 			<div className="nav-cont-van">

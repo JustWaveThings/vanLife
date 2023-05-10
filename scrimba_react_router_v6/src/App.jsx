@@ -20,6 +20,7 @@ import HostDetailPricing from './components/HostDetailPricing';
 import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
 import NotFound from './pages/NotFound';
+import Error from './components/Error';
 
 import './../server';
 
@@ -41,6 +42,7 @@ const router = createBrowserRouter(
 				path="vans"
 				element={<Vans />}
 				loader={vansLoader}
+				errorElement={<Error />}
 			/>
 			<Route
 				path="vans/:id"
