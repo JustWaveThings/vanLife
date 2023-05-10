@@ -20,7 +20,13 @@ function VanDetail() {
 				relative="path"
 				className="back"
 			>
-				<div className="back">Back to all vans</div>
+				{displayVan ? (
+					<div className="back">{` Back to ${
+						displayVan.type.slice(0, 1).toUpperCase() + displayVan.type.slice(1)
+					} vans`}</div>
+				) : (
+					<h2>Loading...</h2>
+				)}
 			</Link>
 			<div className="van-detail-container">
 				{displayVan ? (
