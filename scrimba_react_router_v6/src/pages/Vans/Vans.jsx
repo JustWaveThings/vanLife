@@ -36,22 +36,22 @@ function Vans() {
 				<h1 className="nav-title-van">Explore our van options</h1>
 				<nav className="nav-van-options">
 					<button
-						onClick={() => setSearchParams({ type: null })}
-						className="simple link"
+						onClick={() => setSearchParams({ type: 'simple' })}
+						className={`simple link ${typeFilter === 'simple' ? 'selected' : null} `}
 					>
 						Simple
 					</button>
 
 					<button
 						onClick={() => setSearchParams({ type: 'luxury' })}
-						className="luxury link"
+						className={`luxury link ${typeFilter === 'luxury' ? 'selected' : null} `}
 					>
 						Luxury
 					</button>
 
 					<button
 						onClick={() => setSearchParams({ type: 'rugged' })}
-						className="rugged link"
+						className={`rugged link ${typeFilter === 'rugged' ? 'selected' : null} `}
 					>
 						Rugged
 					</button>
