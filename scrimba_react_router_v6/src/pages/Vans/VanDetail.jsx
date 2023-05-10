@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 
 function VanDetail() {
 	const params = useParams();
 	const [displayVan, setDisplayVan] = useState(null);
 	const location = useLocation();
-	console.log(location);
+
 	useEffect(() => {
 		fetch(`/api/vans/${params.id}`)
 			.then(res => res.json())

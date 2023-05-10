@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLoaderData } from 'react-router-dom';
 import VanCard from './VanCard.jsx';
 import { getVans } from '../../api.js';
 
+export function loader() {
+	return getVans();
+}
+
 function Vans() {
-	const [vanData, setVanData] = useState([]);
+	const vanData = useLoaderData();
 	let [searchParams, setSearchParams] = useSearchParams();
-	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(null);
 	const typeFilter = searchParams.get('type');
 
 	const displayVans = typeFilter ? vanData.filter(van => van.type === typeFilter) : vanData;
-
-	useEffect(() => {
-		async function loadVans() {
-			setLoading(true);
-			const data = await getVans();
-			setVanData(data);
-			setLoading(false);
-		}
-		loadVans();
-	}, []);
 
 	const vanDataDisplay = displayVans?.map(van => (
 		<VanCard
@@ -33,8 +27,9 @@ function Vans() {
 			searchParams={searchParams.toString()}
 		/>
 	));
-	if (loading) {
-		return <h1>Loading...</h1>;
+
+	if (error) {
+		return <h1 className="test"> There was an error: {error.message}</h1>;
 	}
 	return (
 		<div className="test vans">
