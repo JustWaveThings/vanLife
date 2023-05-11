@@ -41,8 +41,8 @@ const router = createBrowserRouter(
 			<Route
 				path="vans"
 				element={<Vans />}
-				loader={vansLoader}
 				errorElement={<Error />}
+				loader={vansLoader}
 			/>
 			<Route
 				path="vans/:id"
