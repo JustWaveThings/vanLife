@@ -21,6 +21,7 @@ import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
 import NotFound from './pages/NotFound';
 import Error from './components/Error';
+import Login from './pages/Login';
 
 import './../server';
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter(
 			<Route
 				path="about"
 				element={<About />}
+			/>
+			<Route
+				path="login"
+				element={<Login />}
 			/>
 			<Route
 				path="vans"
