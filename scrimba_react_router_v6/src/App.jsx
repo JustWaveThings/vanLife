@@ -14,8 +14,8 @@ import Reviews from './pages/Host/Reviews';
 import Income from './pages/Host/Income';
 import HostLayout from './components/HostLayout';
 import Dashboard from './pages/Host/Dashboard';
-import HostVanDetail from './pages/Host/HostVanDetail';
-import ListedVans from './pages/Host/ListedVans';
+import HostVanDetail, { loader as loaderHostDetail } from './pages/Host/HostVanDetail';
+import ListedVans, { loader as loaderListedVans } from './pages/Host/ListedVans';
 import HostDetailPricing from './components/HostDetailPricing';
 import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
@@ -25,7 +25,6 @@ import Login from './pages/Login';
 import AuthRequired from './components/AuthRequired';
 
 import './../server';
-import { getHostVans } from './api';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -87,29 +86,24 @@ const router = createBrowserRouter(
 				<Route
 					path="vans"
 					element={<ListedVans />}
-					loader={async () => {
-						return null;
-					}}
+					loader={loaderListedVans}
 				/>
 				<Route
 					path="vans/:id"
 					element={<HostVanDetail />}
-					loader={getHostVans}
+					loader={loaderHostDetail}
 				>
 					<Route
 						index
 						element={<HostDetailInfo />}
-						loader={getHostVans}
 					/>
 					<Route
 						path="pricing"
 						element={<HostDetailPricing />}
-						loader={getHostVans}
 					/>
 					<Route
 						path="photos"
 						element={<HostDetailPhotos />}
-						loader={getHostVans}
 					/>
 				</Route>
 			</Route>

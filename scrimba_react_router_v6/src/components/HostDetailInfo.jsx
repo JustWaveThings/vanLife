@@ -2,8 +2,8 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 function HostDetailInfo() {
-	const vanDetail = useOutletContext();
-	console.log(vanDetail);
+	const { vanDetail } = useOutletContext();
+
 	return (
 		<div
 			key={vanDetail.id}

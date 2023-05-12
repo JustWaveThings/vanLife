@@ -2,15 +2,16 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 function HostDetailPricing() {
-	const van = useOutletContext();
+	const { vanDetail } = useOutletContext();
+
 	return (
 		<div
-			key={van.id}
+			key={vanDetail.id}
 			className="host-van-detail-card"
 		>
 			<div className="bottom-card">
 				<div className="info">
-					<div className="text">${van.price}/day</div>
+					<div className="text">${vanDetail.price}/day</div>
 				</div>
 			</div>
 		</div>

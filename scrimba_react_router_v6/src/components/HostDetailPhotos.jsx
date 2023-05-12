@@ -2,24 +2,23 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 function HostDetailPhotos() {
-	const [vanDetail] = useOutletContext();
-	const van = vanDetail.map(van => (
+	const { vanDetail } = useOutletContext();
+	return (
 		<div
-			key={van.id}
+			key={vanDetail.id}
 			className="host-van-detail-card"
 		>
 			<div className="bottom-card">
 				<div className="info">
 					<img
 						className="detail-van-photo"
-						src={van.imageUrl}
+						src={vanDetail.imageUrl}
 						height={80}
 					></img>
 				</div>
 			</div>
 		</div>
-	));
-	return <>{van}</>;
+	);
 }
 
 export default HostDetailPhotos;

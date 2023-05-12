@@ -1,17 +1,13 @@
 import React from 'react';
-import { NavLink, Link, useParams, Outlet, useLoaderData } from 'react-router-dom';
+import { NavLink, Link, Outlet, useLoaderData } from 'react-router-dom';
 import { getHostVans } from '../../api.js';
 
-export function loader() {
-	return getHostVans();
+export function loader({ params }) {
+	return getHostVans(params.id);
 }
 function HostVanDetail() {
-	const params = useParams();
-	console.log(params);
-	const preVanDetail = useLoaderData();
-	console.log(preVanDetail);
-	const vanDetail = preVanDetail[params.id];
-	console.log(vanDetail);
+	const vanDetail = useLoaderData();
+
 	if (!vanDetail) {
 		return <h1 className="test">Loading...</h1>;
 	}
@@ -78,7 +74,7 @@ function HostVanDetail() {
 								Photos
 							</NavLink>
 						</nav>
-						<Outlet context={[vanDetail]} />
+						<Outlet context={{ vanDetail }} />
 					</div>
 				</>
 			</div>
