@@ -9,7 +9,7 @@ function ListedVans() {
 			.then(res => res.json())
 			.then(data => setVanData(data.vans));
 	}, []);
-	console.log(vanData);
+
 	return (
 		<div className="host-listed-vans-cont">
 			<h1 className="host-listed-vans-title">Your Listed Vans</h1>

@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, Link, useParams, Outlet } from 'react-router-dom';
+import React from 'react';
+import { NavLink, Link, useParams, Outlet, useLoaderData } from 'react-router-dom';
+import { getHostVans } from '../../api.js';
 
+export function loader() {
+	return getHostVans();
+}
 function HostVanDetail() {
-	const { id } = useParams();
-	const [vanDetail, setVanDetail] = useState(null);
-	useEffect(() => {
-		console.log('useEffect ran');
-		fetch(`/api/host/vans/${id}`)
-			.then(res => res.json())
-			.then(data => setVanDetail(data.vans));
-	}, []);
-
+	const params = useParams();
+	console.log(params);
+	const preVanDetail = useLoaderData();
+	console.log(preVanDetail);
+	const vanDetail = preVanDetail[params.id];
+	console.log(vanDetail);
 	if (!vanDetail) {
 		return <h1 className="test">Loading...</h1>;
 	}
@@ -77,7 +78,7 @@ function HostVanDetail() {
 								Photos
 							</NavLink>
 						</nav>
-						<Outlet context={[vanDetail, setVanDetail]} />
+						<Outlet context={[vanDetail]} />
 					</div>
 				</>
 			</div>

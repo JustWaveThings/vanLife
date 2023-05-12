@@ -2,8 +2,8 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 function HostDetailPricing() {
-	const [vanDetail, setVanDetail] = useOutletContext();
-	const van = vanDetail.map(van => (
+	const van = useOutletContext();
+	return (
 		<div
 			key={van.id}
 			className="host-van-detail-card"
@@ -14,8 +14,7 @@ function HostDetailPricing() {
 				</div>
 			</div>
 		</div>
-	));
-	return <>{van}</>;
+	);
 }
 
 export default HostDetailPricing;

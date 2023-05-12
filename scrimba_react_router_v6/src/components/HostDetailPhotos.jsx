@@ -2,7 +2,7 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 function HostDetailPhotos() {
-	const [vanDetail, setVanDetail] = useOutletContext();
+	const [vanDetail] = useOutletContext();
 	const van = vanDetail.map(van => (
 		<div
 			key={van.id}

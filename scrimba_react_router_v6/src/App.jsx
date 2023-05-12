@@ -8,7 +8,7 @@ import './../server.js';
 import Home from './pages/Home';
 import About from './pages/About';
 import Vans, { loader as vansLoader } from './pages/Vans/Vans';
-import VanDetail from './pages/Vans/VanDetail';
+import VanDetail, { loader as vanDetailLoader } from './pages/Vans/VanDetail';
 import Layout from './components/Layout';
 import Reviews from './pages/Host/Reviews';
 import Income from './pages/Host/Income';
@@ -22,8 +22,10 @@ import HostDetailInfo from './components/HostDetailInfo';
 import NotFound from './pages/NotFound';
 import Error from './components/Error';
 import Login from './pages/Login';
+import AuthRequired from './components/AuthRequired';
 
 import './../server';
+import { getHostVans } from './api';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -52,42 +54,62 @@ const router = createBrowserRouter(
 			<Route
 				path="vans/:id"
 				element={<VanDetail />}
+				loader={vanDetailLoader}
 			/>
 			<Route
 				path="host"
 				element={<HostLayout />}
+				loader={async () => {
+					return null;
+				}}
 			>
 				<Route
 					index
 					element={<Dashboard />}
+					loader={async () => {
+						return null;
+					}}
 				/>
 				<Route
 					path="income"
 					element={<Income />}
+					loader={async () => {
+						return null;
+					}}
 				/>
 				<Route
 					path="reviews"
 					element={<Reviews />}
+					loader={async () => {
+						return null;
+					}}
 				/>
 				<Route
 					path="vans"
 					element={<ListedVans />}
+					loader={async () => {
+						return null;
+					}}
 				/>
 				<Route
 					path="vans/:id"
 					element={<HostVanDetail />}
+					loader={getHostVans}
 				>
 					<Route
 						index
 						element={<HostDetailInfo />}
+						loader={getHostVans}
 					/>
 					<Route
 						path="pricing"
 						element={<HostDetailPricing />}
+						loader={getHostVans}
 					/>
 					<Route
 						path="photos"
 						element={<HostDetailPhotos />}
+						loader={getHostVans}
 					/>
 				</Route>
 			</Route>

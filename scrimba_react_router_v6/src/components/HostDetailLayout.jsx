@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLoaderData } from 'react-router-dom';
 
+export function loader() {
+	return getHostVans();
+}
 function HostDetailLayout() {
-	const params = useParams();
-	const [vanDetail, setVanDetail] = useState(null);
-	useEffect(() => {
-		console.log('useEffect ran');
-		fetch(`/api/host/vans/${params.id}`)
-			.then(res => res.json())
-			.then(data => setVanDetail(data.vans));
-	}, [params.id]);
+	const { id } = useParams();
+	const preVanDetail = useLoaderData();
+	const vanDetail = preVanDetail[id];
+
 	return (
 		<div className="host-detail-layout-cont">
 			<Link
@@ -48,30 +47,6 @@ function HostDetailLayout() {
 						</div>
 					</div>
 				))}
-			{/*
-			<nav className="host-details-nav">
-				<NavLink
-					to="."
-					end
-					className={({ isActive }) => (isActive ? 'my-link' : 'link')}
-				>
-					Details
-				</NavLink>
-
-				<NavLink
-					to="pricing"
-					className={({ isActive }) => (isActive ? 'my-link' : 'link')}
-				>
-					Pricing
-				</NavLink>
-				<NavLink
-					to="photos"
-					className={({ isActive }) => (isActive ? 'my-link' : 'link')}
-				>
-					Photos
-				</NavLink>
-			</nav>
-			<Outlet /> */}
 		</div>
 	);
 }
