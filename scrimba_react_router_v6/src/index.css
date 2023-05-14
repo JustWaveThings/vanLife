@@ -658,6 +658,12 @@ a.back {
 	font-family: 'Inter', sans-serif;
 }
 
+.login-form > .disabled {
+	background-color: #ff8c38;
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
 .loginRedirectMessage {
 	font-size: 0.9rem;
 	margin: 1rem 0rem;
