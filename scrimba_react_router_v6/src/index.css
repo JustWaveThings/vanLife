@@ -657,3 +657,9 @@ a.back {
 	color: white;
 	font-family: 'Inter', sans-serif;
 }
+
+.loginRedirectMessage {
+	font-size: 0.9rem;
+	margin: 1rem 0rem;
+	color: red;
+}
