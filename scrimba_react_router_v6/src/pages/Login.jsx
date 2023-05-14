@@ -15,17 +15,16 @@ export default function Login() {
 		e.preventDefault();
 		setLoginProcessStatus('submitting');
 		console.log(loginFormData);
+		setLoginError(null);
 		loginUser(loginFormData)
 			.then(data => {
 				console.log(data);
-				setLoginProcessStatus('idle');
-				setLoginError(null);
 			})
 			.catch(err => {
 				setLoginError(err.message || 'Unknown error');
-				setLoginProcessStatus('idle');
 				console.error(loginError);
-			});
+			})
+			.finally(() => setLoginProcessStatus('idle'));
 	}
 
 	function handleChange(e) {
@@ -59,7 +58,11 @@ export default function Login() {
 					placeholder="Password"
 					value={loginFormData.password}
 				/>
-				{loginProcessStatus === 'submitting' ? <button className="disabled">Log in</button> : <button>Log in</button>}
+				{loginProcessStatus === 'submitting' ? (
+					<button className="disabled">Logging in...</button>
+				) : (
+					<button>Log in</button>
+				)}
 			</form>
 		</div>
 	);
