@@ -21,7 +21,7 @@ import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
 import NotFound from './pages/NotFound';
 import Error from './components/Error';
-import Login, { loginLoader } from './pages/Login';
+import Login, { loginLoader, action } from './pages/Login';
 
 import { requireAuth } from './utils.js';
 
@@ -46,6 +46,7 @@ const router = createBrowserRouter(
 				path="login"
 				element={<Login />}
 				loader={loginLoader}
+				action={action}
 			/>
 			<Route
 				path="vans"
@@ -108,6 +109,7 @@ const router = createBrowserRouter(
 		</Route>
 	)
 );
+
 function App() {
 	return <RouterProvider router={router}></RouterProvider>;
 }
