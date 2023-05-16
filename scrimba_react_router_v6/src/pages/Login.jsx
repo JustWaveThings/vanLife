@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import { useLoaderData, Form, useActionData, redirect } from 'react-router-dom';
+import React from 'react';
+import { Form, useActionData, redirect, useNavigation } from 'react-router-dom';
 import { loginUser } from '../api';
 
-export function loginLoader({ request }) {
-	return new URL(request.url).searchParams.get('message');
-}
-
 export async function action({ request }) {
+	console.log('request', request);
 	const formData = await request.formData();
 	const email = formData.get('email');
 	const password = formData.get('password');
+
+	const pathname = new URL(request.url).searchParams.get('redirectTo');
+
 	try {
 		await loginUser({ email, password });
 		localStorage.setItem('loggedin', true);
-		const response = redirect('/host');
+		const response = redirect(pathname || '/host');
 		response.body = true;
 		return response;
 	} catch (error) {
@@ -22,14 +22,14 @@ export async function action({ request }) {
 }
 
 export default function Login() {
-	const [loginProcessStatus, setLoginProcessStatus] = useState('idle');
 	const error = useActionData();
-	const message = useLoaderData();
+
+	const navigate = useNavigation();
+	const loginProcessStatus = navigate.state;
 
 	return (
 		<div className="login-container">
 			<h1>Sign in to your account</h1>
-			{message && <h2 className="loginRedirectMessage">{message}</h2>}
 			{error && <h4 className="loginErrorMessage">{error} </h4>}
 			<Form
 				method="post"

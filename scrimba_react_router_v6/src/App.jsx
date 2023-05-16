@@ -21,7 +21,7 @@ import HostDetailPhotos from './components/HostDetailPhotos';
 import HostDetailInfo from './components/HostDetailInfo';
 import NotFound from './pages/NotFound';
 import Error from './components/Error';
-import Login, { loginLoader, action } from './pages/Login';
+import Login, { action } from './pages/Login';
 
 import { requireAuth } from './utils.js';
 
@@ -45,7 +45,6 @@ const router = createBrowserRouter(
 			<Route
 				path="login"
 				element={<Login />}
-				loader={loginLoader}
 				action={action}
 			/>
 			<Route
@@ -61,22 +60,22 @@ const router = createBrowserRouter(
 			<Route
 				path="host"
 				element={<HostLayout />}
-				loader={async () => await requireAuth()}
+				loader={async ({ request }) => await requireAuth(request)}
 			>
 				<Route
 					index
 					element={<Dashboard />}
-					loader={async () => await requireAuth()}
+					loader={async ({ request }) => await requireAuth(request)}
 				/>
 				<Route
 					path="income"
 					element={<Income />}
-					loader={async () => await requireAuth()}
+					loader={async ({ request }) => await requireAuth(request)}
 				/>
 				<Route
 					path="reviews"
 					element={<Reviews />}
-					loader={async () => await requireAuth()}
+					loader={async ({ request }) => await requireAuth(request)}
 				/>
 				<Route
 					path="vans"
