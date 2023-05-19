@@ -25,8 +25,6 @@ import Login, { action } from './pages/Login';
 
 import { requireAuth } from './utils.js';
 
-import './../server';
-
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route
@@ -51,11 +49,13 @@ const router = createBrowserRouter(
 				path="vans"
 				element={<Vans />}
 				loader={vansLoader}
+				errorElement={<Error />}
 			/>
 			<Route
 				path="vans/:id"
 				element={<VanDetail />}
 				loader={vanDetailLoader}
+				errorElement={<Error />}
 			/>
 			<Route
 				path="host"
@@ -81,11 +81,13 @@ const router = createBrowserRouter(
 					path="vans"
 					element={<ListedVans />}
 					loader={loaderListedVans}
+					errorElement={<Error />}
 				/>
 				<Route
 					path="vans/:id"
 					element={<HostVanDetail />}
 					loader={loaderHostDetail}
+					errorElement={<Error />}
 				>
 					<Route
 						index

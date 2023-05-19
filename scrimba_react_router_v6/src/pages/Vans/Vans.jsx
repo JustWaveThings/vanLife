@@ -1,36 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchParams, useLoaderData } from 'react-router-dom';
+import React, { useState, Suspense } from 'react';
+import { useSearchParams, useLoaderData, defer, Await } from 'react-router-dom';
 import VanCard from './VanCard.jsx';
 import { getVans } from '../../api.js';
 
 export function loader() {
-	return getVans();
+	return defer({ vans: getVans() });
 }
 
 function Vans() {
-	const vanData = useLoaderData();
+	const loaderData = useLoaderData();
 	let [searchParams, setSearchParams] = useSearchParams();
-	const [error, setError] = useState(null);
+
 	const typeFilter = searchParams.get('type');
-
-	const displayVans = typeFilter ? vanData.filter(van => van.type === typeFilter) : vanData;
-
-	const vanDataDisplay = displayVans?.map(van => (
-		<VanCard
-			image={van.imageUrl}
-			key={van.id}
-			vanName={van.name}
-			price={van.price}
-			type={van.type}
-			id={van.id}
-			description={van.description}
-			searchParams={searchParams.toString()}
-		/>
-	));
-
-	if (error) {
-		return <h1 className="test"> There was an error: {error.message}</h1>;
-	}
 
 	return (
 		<div className="test vans">
@@ -67,7 +48,26 @@ function Vans() {
 						</button>
 					)}
 				</nav>
-				<main className="van-cont">{vanDataDisplay}</main>
+				<Suspense fallback={<h2> Loading Vans...</h2>}>
+					<Await resolve={loaderData.vans}>
+						{vanDataDisplay => {
+							const displayVans = typeFilter ? vanDataDisplay.filter(van => van.type === typeFilter) : vanDataDisplay;
+							const vanDisplay = displayVans?.map(van => (
+								<VanCard
+									image={van.imageUrl}
+									key={van.id}
+									vanName={van.name}
+									price={van.price}
+									type={van.type}
+									id={van.id}
+									description={van.description}
+									searchParams={searchParams.toString()}
+								/>
+							));
+							return <main className="van-cont">{vanDisplay}</main>;
+						}}
+					</Await>
+				</Suspense>
 			</div>
 		</div>
 	);

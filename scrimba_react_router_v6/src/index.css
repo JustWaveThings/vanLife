@@ -16,6 +16,7 @@ p {
 	flex-direction: column;
 	width: 100svw;
 	height: 100svh;
+
 	background-color: #fff7ed;
 }
 
@@ -175,6 +176,7 @@ footer {
 .home {
 	background-image: url('/home_mountain_background.png');
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* van card styling */

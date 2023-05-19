@@ -30,6 +30,7 @@ export default function Login() {
 	return (
 		<div className="login-container">
 			<h1>Sign in to your account</h1>
+
 			{error && <h4 className="loginErrorMessage">{error} </h4>}
 			<Form
 				method="post"
@@ -49,7 +50,10 @@ export default function Login() {
 				{loginProcessStatus === 'submitting' ? (
 					<button className="disabled">Logging in...</button>
 				) : (
-					<button>Log in</button>
+					<>
+						<button>Log in</button>
+						<h1>user: b@b.com, pass: p123</h1>
+					</>
 				)}
 			</Form>
 		</div>
