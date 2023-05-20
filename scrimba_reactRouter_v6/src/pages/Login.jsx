@@ -3,13 +3,12 @@ import { Form, useActionData, redirect, useNavigation } from 'react-router-dom';
 import { loginUser } from '../api';
 
 export async function action({ request }) {
-	console.log('request', request);
 	const formData = await request.formData();
 	const email = formData.get('email');
 	const password = formData.get('password');
 
 	const pathname = new URL(request.url).searchParams.get('redirectTo');
-
+	console.log('pathname', pathname);
 	try {
 		await loginUser({ email, password });
 		localStorage.setItem('loggedin', true);
@@ -23,7 +22,6 @@ export async function action({ request }) {
 
 export default function Login() {
 	const error = useActionData();
-
 	const navigate = useNavigation();
 	const loginProcessStatus = navigate.state;
 

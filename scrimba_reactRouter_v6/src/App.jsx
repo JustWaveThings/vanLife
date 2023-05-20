@@ -108,7 +108,10 @@ const router = createBrowserRouter(
 				element={<NotFound />}
 			/>
 		</Route>
-	)
+	),
+	{
+		basename: '/scrimba_reactRouter_v6',
+	}
 );
 
 function App() {
