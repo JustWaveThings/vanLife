@@ -5,7 +5,7 @@ function About() {
 		<div className="about">
 			<div className="hero-img">
 				<img
-					src="/person_on_top_of_van.png"
+					src="./src/images/person_on_top_of_van.png"
 					alt="person on top of camper van at night"
 				/>
 			</div>

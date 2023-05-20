@@ -174,7 +174,7 @@ footer {
 }
 
 .home {
-	background-image: url('/home_mountain_background.png');
+	background-image: url('./images/home_mountain_background.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
