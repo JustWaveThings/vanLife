@@ -1,6 +1,6 @@
 {
-  "name": "scrimba_exercise",
-  "private": true,
+  "name": "scrimba_reactRouter_v6",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,7 +10,6 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "firebase": "^9.22.0",
     "gh-pages": "^5.0.0",
     "miragejs": "^0.1.47",
     "react": "^18.2.0",
