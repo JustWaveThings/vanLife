@@ -1,7 +1,8 @@
 import { redirect } from 'react-router-dom';
 
 export async function requireAuth(request) {
-  const pathname = new URL(request.url).pathname;
+  console.log('request', request);
+  const pathname = new URL(request.url);
 
   const isLoggedIn = localStorage.getItem('loggedInVanLife');
   if (!isLoggedIn) {
