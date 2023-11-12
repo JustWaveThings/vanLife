@@ -1,12 +1,12 @@
 import React from 'react';
-import personOnTopOfVan from '../images/person_on_top_of_van.png';
+import image from '../images/vanTop.png';
 
 function About() {
   return (
     <div className='about'>
       <div className='hero-img'>
         <img
-          src={personOnTopOfVan}
+          src={image}
           alt='person on top of camper van at night'
         />
       </div>
