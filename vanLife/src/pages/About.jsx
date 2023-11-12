@@ -1,5 +1,5 @@
 import React from 'react';
-import personOnTopOfVan from '../../person_on_top_of_van.png';
+import personOnTopOfVan from '../images/person_on_top_of_van.png';
 
 function About() {
   return (
