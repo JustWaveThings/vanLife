@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div className='login-container'>
-      <h1>Sign in to your account</h1>
+      <h1 className='login-title'>Sign in to your account</h1>
 
       {error && <h4 className='loginErrorMessage'>{error} </h4>}
       <Form
@@ -48,8 +48,8 @@ export default function Login() {
           <button className='disabled'>Logging in...</button>
         ) : (
           <>
-            <button>Log in</button>
-            <h1>user: b@b.com, pass: p123</h1>
+            <button className='login-subtitle'>Log in</button>
+            <p className='credentials'>user: b@b.com, pass: p123</p>
           </>
         )}
       </Form>
