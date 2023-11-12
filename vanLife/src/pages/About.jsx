@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import image from '../images/vanTop.png';
 
 function About() {
@@ -20,7 +21,9 @@ function About() {
       </main>
       <div className='cta-cont-about'>
         <div className='cta-text-about'>Your destination is waiting. Your van is ready.</div>
-        <button className='cta-text-button'>Explore our vans</button>
+        <Link to='/vans'>
+          <button className='cta-text-button'>Explore our vans</button>{' '}
+        </Link>
       </div>
     </div>
   );
