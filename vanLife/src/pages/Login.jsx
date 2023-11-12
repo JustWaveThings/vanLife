@@ -8,7 +8,6 @@ export async function action({ request }) {
   const password = formData.get('password');
 
   const pathname = new URL(request.url).searchParams.get('redirectTo');
-  console.log('pathname', pathname);
   try {
     await loginUser({ email, password });
     localStorage.setItem('loggedInVanLife', true);
