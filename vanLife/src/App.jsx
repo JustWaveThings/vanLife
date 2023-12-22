@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } 
 
 import './meyer.css';
 import './index.css';
-import '../server.js';
+// import '../server.js';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -27,24 +27,83 @@ import { requireAuth } from './utils.js';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout />} errorElement={<Error />}>
-      <Route index element={<Home />} />
-      <Route path='about' element={<About />} />
-      <Route path='login' element={<Login />} action={action} />
-      <Route path='vans' element={<Vans />} loader={vansLoader} errorElement={<Error />} />
-      <Route path='vans/:id' element={<VanDetail />} loader={vanDetailLoader} errorElement={<Error />} />
-      <Route path='host' element={<HostLayout />} loader={async ({ request }) => await requireAuth(request)}>
-        <Route index element={<Dashboard />} loader={async ({ request }) => await requireAuth(request)} />
-        <Route path='income' element={<Income />} loader={async ({ request }) => await requireAuth(request)} />
-        <Route path='reviews' element={<Reviews />} loader={async ({ request }) => await requireAuth(request)} />
-        <Route path='vans' element={<ListedVans />} loader={loaderListedVans} errorElement={<Error />} />
-        <Route path='vans/:id' element={<HostVanDetail />} loader={loaderHostDetail} errorElement={<Error />}>
-          <Route index element={<HostDetailInfo />} />
-          <Route path='pricing' element={<HostDetailPricing />} />
-          <Route path='photos' element={<HostDetailPhotos />} />
+    <Route
+      path='/'
+      element={<Layout />}
+      errorElement={<Error />}>
+      <Route
+        index
+        element={<Home />}
+      />
+      <Route
+        path='about'
+        element={<About />}
+      />
+      <Route
+        path='login'
+        element={<Login />}
+        action={action}
+      />
+      <Route
+        path='vans'
+        element={<Vans />}
+        loader={vansLoader}
+        errorElement={<Error />}
+      />
+      <Route
+        path='vans/:id'
+        element={<VanDetail />}
+        loader={vanDetailLoader}
+        errorElement={<Error />}
+      />
+      <Route
+        path='host'
+        element={<HostLayout />}
+        loader={async ({ request }) => await requireAuth(request)}>
+        <Route
+          index
+          element={<Dashboard />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
+        <Route
+          path='income'
+          element={<Income />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
+        <Route
+          path='reviews'
+          element={<Reviews />}
+          loader={async ({ request }) => await requireAuth(request)}
+        />
+        <Route
+          path='vans'
+          element={<ListedVans />}
+          loader={loaderListedVans}
+          errorElement={<Error />}
+        />
+        <Route
+          path='vans/:id'
+          element={<HostVanDetail />}
+          loader={loaderHostDetail}
+          errorElement={<Error />}>
+          <Route
+            index
+            element={<HostDetailInfo />}
+          />
+          <Route
+            path='pricing'
+            element={<HostDetailPricing />}
+          />
+          <Route
+            path='photos'
+            element={<HostDetailPhotos />}
+          />
         </Route>
       </Route>
-      <Route path='*' element={<NotFound />} />
+      <Route
+        path='*'
+        element={<NotFound />}
+      />
     </Route>
   ),
   {
