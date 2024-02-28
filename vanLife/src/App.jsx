@@ -98,12 +98,12 @@ const router = createBrowserRouter(
             path='photos'
             element={<HostDetailPhotos />}
           />
+          <Route
+            path='*'
+            element={<NotFound />}
+          />
         </Route>
       </Route>
-      <Route
-        path='*'
-        element={<NotFound />}
-      />
     </Route>
   ),
   {
